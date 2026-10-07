@@ -14,6 +14,20 @@ and retrieve the results (individually or as a ZIP).
 - ZIP download with a `manifest.csv` covering every row (success *and* failure)
 - 26 tests, Dockerfile, interactive OpenAPI docs at `/docs`
 
+## Demo
+
+**1. Submit a bulk job.** One request returns `202` and a job id. Invalid rows fail individually, valid ones continue.
+
+![Swagger UI](docs/swagger.png)
+
+**2. Generated certificate** with a QR code linking to the public verification endpoint.
+
+![Certificate](docs/certificate.png)
+
+**3. Scanning the QR code from a phone** returns the verified details (no email exposed).
+
+![Phone verification](docs/verify-phone.jpeg)
+
 ## Setup
 ```bash
 python -m venv .venv && source .venv/bin/activate     # Windows: .venv\Scripts\activate
